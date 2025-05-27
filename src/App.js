@@ -19,8 +19,8 @@ function App() {
     if (exist) {
       setCartItems(
         cartItems.map((x) =>
-          x.id === food.id ? { ...exist, quantity: exist.quantity + 1 } : x
-        )
+          x.id === food.id ? { ...exist, quantity: exist.quantity + 1 } : x,
+        ),
       );
     } else {
       setCartItems([...cartItems, { ...food, quantity: 1 }]);
@@ -34,8 +34,8 @@ function App() {
     } else {
       setCartItems(
         cartItems.map((x) =>
-          x.id === food.id ? { ...exist, quantity: exist.quantity - 1 } : x
-        )
+          x.id === food.id ? { ...exist, quantity: exist.quantity - 1 } : x,
+        ),
       );
     }
   };
@@ -47,8 +47,8 @@ function App() {
 
   return (
     <>
-      <h1 className="heading">Order Food</h1>
-      <Cart cartItems={cartItems} onCheckout={onCheckout}/>
+      <h1 className="heading">Urganch Earts</h1>
+      <Cart cartItems={cartItems} onCheckout={onCheckout} />
       <div className="cards__container">
         {foods.map((food) => {
           return (

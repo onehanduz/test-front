@@ -29,11 +29,13 @@ function Card({ food, onAdd, onRemove }) {
       </h4>
 
       <div className="btn-container">
-        <Button title={"+"} type={"add"} onClick={handleIncrement} />
         {count !== 0 ? (
-          <Button title={"-"} type={"remove"} onClick={handleDecrement} />
+          <>
+            <Button title="-" type="remove" onClick={handleDecrement} />
+            <Button title="+" type="add" onClick={handleIncrement} />
+          </>
         ) : (
-          ""
+          <Button title="+" type="add" onClick={handleIncrement} />
         )}
       </div>
     </div>
