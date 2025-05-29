@@ -43,14 +43,14 @@ function App() {
   const onCheckout = () => {
     tele.MainButton.text = "Pay :)";
     tele.MainButton.show();
-    tele.MainButton.onClick(() => {
-      const data = JSON.stringify({
-        action: "submit",
-        userId: tele.initDataUnsafe.user?.id,
-        message: "User clicked the MainButton",
-      });
-      tele.sendData(data);
-    });
+    // tele.MainButton.onClick(() => {
+    //   const data = JSON.stringify({
+    //     action: "submit",
+    //     userId: tele.initDataUnsafe.user?.id,
+    //     message: "User clicked the MainButton",
+    //   });
+    //   tele.sendData(data);
+    // });
   };
 
   return (
