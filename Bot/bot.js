@@ -10,5 +10,14 @@ bot.start((ctx) =>
     },
   }),
 );
-
+bot.on("web_app_data", async (ctx) => {
+  try {
+    const data = ctx.webAppData?.data.json();
+    console.log("Received web app data:", data);
+    await ctx.reply(`Received data: ${JSON.stringify(data)}`);
+  } catch (error) {
+    console.error("Error handling web_app_data:", error);
+    await ctx.reply("Failed to process web app data.");
+  }
+});
 bot.launch();
